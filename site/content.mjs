@@ -1,3 +1,4 @@
+import { translations } from './translations.mjs';
 export const slugs = ['brainharness-cooking', 'brainharness-docs', 'brainharness-autoresearch'];
 export const locales = {
   en: {
@@ -9,7 +10,7 @@ export const locales = {
     skills:[{name:'Cooking',category:'Make dinner happen',description:'Turn what you have into a meal you can actually cook. Built around Chinese home cooking, useful technique, and substitutions.',use:'“How do I keep beef tender?”',requirement:'Instructions and reference guides.',action:'Explore Cooking'}, {name:'Docs',category:'Give every fact a home',description:'Organize documentation by project size, audience, and freshness. Make the next file easier to find.',use:'“Help me organize this project’s docs.”',requirement:'File access is needed to edit your project.',action:'Explore Docs'}, {name:'Autoresearch',category:'Test your next idea',description:'Run controlled prompt experiments with explicit checks. Compare results before applying a change.',use:'“Compare these prompt variants.”',requirement:'Requires Python and your model API credentials. Calls may incur charges.',action:'Explore Autoresearch'}],
     installTitle:'Your agent. Your workflow.',installText:'Pick a platform, then a skill. Keep using the tools you already know.',choose:'Choose a skill',copy:'Copy commands',copied:'Copied',copyFailed:'Could not copy. Select and copy the command below.',
     claudeStatus:'Available through the BrainHarness marketplace.',codexStatus:'Install from the repository marketplace. Autoresearch also requires Python and your model API credentials.',chatgptStatus:'Not yet listed in the public ChatGPT plugin directory. Codex compatibility does not imply public ChatGPT availability.',clawhubStatus:'Skills are listed on ClawHub. Check the listing for the currently downloadable version.',
-    note:'Already using @brainforge? Add the new marketplace explicitly. Existing installation IDs do not change automatically.',sourceTitle:'Open by design.',sourceText:'Read the instructions. Check the code. Make it yours. BrainHarness brings the collection together; each skill stays independently maintained.',sourceAction:'Browse the marketplace',footer:'Practical workflows for everyday agents.',language:'简体中文',other:'zh',example:'Example task',release:'Releases',platform:'Platform',
+    note:'Already using @brainforge? Add the new marketplace explicitly. Existing installation IDs do not change automatically.',sourceTitle:'Open by design.',sourceText:'Read the instructions. Check the code. Make it yours. BrainHarness brings the collection together; each skill stays independently maintained.',sourceAction:'Browse the marketplace',footer:'Practical workflows for everyday agents.',skip:'Skip to content',languageLabel:'Language',example:'Example task',release:'Releases',platform:'Platform',
   },
   zh: {
     tagline: '为 Agent 准备的实用技能。', navigation: '主导航',
@@ -19,7 +20,8 @@ export const locales = {
     skills:[{name:'Cooking',category:'把晚饭安排明白',description:'从现有食材出发，给出能照着做的菜谱。以中式家常菜为主，兼顾实用技法和食材替代。',use:'“牛肉怎么炒才嫩？”',requirement:'以操作指导和参考资料为主。',action:'了解 Cooking'},{name:'Docs',category:'让文档各归其位',description:'按项目规模、读者和内容时效组织文档，让下一次查找少绕一点路。',use:'“帮我整理这个项目的文档。”',requirement:'实际修改项目需要文件访问权限。',action:'了解 Docs'},{name:'Autoresearch',category:'让想法经得起比较',description:'围绕明确标准运行提示词实验。先看结果，再决定要不要采用修改。',use:'“比较一下这几版提示词。”',requirement:'需要 Python 和你自己的模型 API 凭据，调用可能产生费用。',action:'了解 Autoresearch'}],
     installTitle:'选你的平台，接着做事。',installText:'选择平台和技能，使用你熟悉的工具。',choose:'选择技能',copy:'复制命令',copied:'已复制',copyFailed:'复制失败，请手动选择下方命令。',
     claudeStatus:'可通过 BrainHarness 插件市场安装。',codexStatus:'可通过仓库市场安装。Autoresearch 还需要 Python 和你自己的模型 API 凭据。',chatgptStatus:'尚未上架 ChatGPT 公开插件目录。Codex 兼容不代表普通 ChatGPT 中已公开可用。',clawhubStatus:'技能已在 ClawHub 建立条目，当前可下载版本以条目显示为准。',
-    note:'之前安装过 @brainforge？请显式添加新市场，已有安装标识不会自动改名。',sourceTitle:'开源，也欢迎你改进。',sourceText:'读一读技能说明，看看代码，按自己的需要调整。BrainHarness 汇集这些工具，每个技能仍然独立维护。',sourceAction:'浏览市场仓库',footer:'给日常 Agent 的实用工作方式。',language:'English',other:'en',example:'任务示例',release:'版本记录',platform:'平台',
+    note:'之前安装过 @brainforge？请显式添加新市场，已有安装标识不会自动改名。',sourceTitle:'开源，也欢迎你改进。',sourceText:'读一读技能说明，看看代码，按自己的需要调整。BrainHarness 汇集这些工具，每个技能仍然独立维护。',sourceAction:'浏览市场仓库',footer:'给日常 Agent 的实用工作方式。',skip:'跳到内容',languageLabel:'语言',example:'任务示例',release:'版本记录',platform:'平台',
   }
 };
+Object.assign(locales, translations);
 export const compatibility = { codex: true };

@@ -9,7 +9,7 @@ test('both languages preserve project-path navigation and distinct canonical URL
     assert.ok(html.includes(`href="https://zning1994.github.io/brainharness/${lang}/"`));
     assert.ok(html.includes('href="../style.css"'));
     assert.ok(html.includes(lang==='zh'?'选择技能':'Choose a skill'));
-    assert.equal((html.match(/<article class="skill">/g)||[]).length,3);
+    assert.equal((html.match(/<article class="skill"\s/g)||[]).length,3);
     assert.ok(html.includes('/plugin install brainharness-cooking@brainharness'));
     assert.ok(!html.includes('href="/'));
   }
