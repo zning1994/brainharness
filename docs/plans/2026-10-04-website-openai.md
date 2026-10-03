@@ -24,8 +24,8 @@ Last reviewed: 2026-10-04
 
 - [x] PR 和 main 运行 Node 24 测试与构建。
 - [x] 上传 site/dist；仅 main 使用 deploy-pages 发布，permissions 最小化并使用 github-pages environment。
-- [ ] 不写 CNAME，不修改 DNS。按 GitHub 默认项目地址验收后再配置域名。
-- [ ] 核对 git diff、清单验证和旧 Claude 安装。给出提交文件范围，等用户确认后提交推送并启用 Pages。
+- [x] 不写 CNAME，不修改 DNS。GitHub Pages 已直接绑定用户配置好的正式域名，并按正式域名验收。
+- [x] 核对 git diff、清单验证和旧 Claude 安装。用户已确认提交文件范围，代码已推送，Pages 已启用。
 
 ## 任务三：跨仓兼容，文件范围已确认
 
@@ -68,3 +68,11 @@ Last reviewed: 2026-10-04
 ## 发布执行
 
 2026-10-04 用户确认全部提交与发布范围。三个技能源仓 main 已核实为 50aa3fd、84d6291、1cf7c58。三个版本分发分支已推送并核实远端，Codex 从 GitHub URL 安装三个插件成功。Pages workflow 模式已启用，正式域名已提交绑定；网站 SITE_URL 使用 https://brainharness.si。证书与部署成功需要后续线上核验。
+
+## 最终验收结果
+
+✅VERIFIED：官网提交 6039087 已落入远端 main。GitHub Actions 运行 37154952097 构建与部署成功。正式域名根页面、中英文页面、CSS、JS、sitemap 均返回 HTTP 200；中英文 HTML 与本地正式域名构建逐字节一致。www 与 HTTP 请求跳转至 HTTPS 根域。Pages API 确认 https_enforced=true，证书覆盖根域与 www。
+
+✅VERIFIED：公开命令 codex plugin marketplace add zning1994/brainharness 及三个插件安装成功，远端下载后的 25 个文件与已验证产物一致。分发提交：Cooking 801029b，Docs a2bcb6f，Autoresearch b44ce87。
+
+本次提交、分发和官网部署已完成。ChatGPT 公开目录审核、模型实验、GitHub Release 和 ClawHub 新版本不在本次发布范围；没有宣称已完成这些事项。
