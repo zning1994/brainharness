@@ -1,18 +1,18 @@
 <div align="center">
 
-# brainforge
+# brainharness
 
 > Claude Code スキルを鍛えるための工房。
 
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Marketplace-blueviolet)](https://claude.ai/code)
 [![Plugins](https://img.shields.io/badge/plugins-3-green)](#同梱プラグイン)
-[![Status](https://img.shields.io/badge/status-v0.1.3-orange)](#)
+[![Status](https://img.shields.io/badge/status-v0.2.0-orange)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 Claude Code プラグインマーケットプレイス。
 自分で書いて実際に使っているスキル/プラグインをまとめ、誰でも 1 コマンドでインストールできるようにしています。
 
-[インストール](#インストール) · [同梱プラグイン](#同梱プラグイン) · [貢献](#貢献--フィードバック) · [Changelog](CHANGELOG.md) · [Releases](https://github.com/zning1994/brainforge/releases)
+[インストール](#インストール) · [同梱プラグイン](#同梱プラグイン) · [貢献](#貢献--フィードバック) · [Changelog](CHANGELOG.md) · [Releases](https://github.com/zning1994/brainharness/releases)
 
 **Other Languages / 其他语言：**
 
@@ -24,9 +24,9 @@ Claude Code プラグインマーケットプレイス。
 
 ## これは何か
 
-brainforge は単独のスキルではなく、**マニフェストリポジトリ**です。`marketplace.json` が 1 つ入っているだけで、各プラグインの独立した GitHub リポジトリを列挙しています。Claude Code はこのマニフェストを読み、各スキルをそれぞれのソースリポジトリから取得します。
+brainharness は単独のスキルではなく、**マニフェストリポジトリ**です。`marketplace.json` が 1 つ入っているだけで、各プラグインの独立した GitHub リポジトリを列挙しています。Claude Code はこのマニフェストを読み、各スキルをそれぞれのソースリポジトリから取得します。
 
-各スキルは独自のリポジトリ、Issue トラッカー、リリースサイクルを持っています。brainforge はそれらを同じ棚にまとめる役割だけを担います。
+各スキルは独自のリポジトリ、Issue トラッカー、リリースサイクルを持っています。brainharness はそれらを同じ棚にまとめる役割だけを担います。
 
 ---
 
@@ -35,21 +35,21 @@ brainforge は単独のスキルではなく、**マニフェストリポジト�
 ### マーケットプレイスを追加
 
 ```bash
-/plugin marketplace add zning1994/brainforge
+/plugin marketplace add zning1994/brainharness
 ```
 
 ### プラグインをインストール
 
 ```bash
-/plugin install cooking-skill@brainforge
-/plugin install docs-organization@brainforge
-/plugin install brainforge-autoresearch@brainforge
+/plugin install brainharness-cooking@brainharness
+/plugin install brainharness-docs@brainharness
+/plugin install brainharness-autoresearch@brainharness
 ```
 
 ### 最新版に更新
 
 ```bash
-/plugin marketplace update brainforge
+/plugin marketplace update brainharness
 /reload-plugins
 ```
 
@@ -57,25 +57,25 @@ brainforge は単独のスキルではなく、**マニフェストリポジト�
 
 ## 同梱プラグイン
 
-### cooking-skill
+### brainharness-cooking
 
 今夜何を作るか、どう作るか、失敗した時の救済策を提案するスキル。デフォルトは中華の家庭料理。まず 2 つの重要な条件を確認してから、実際に鍋で再現できる提案を返します。
 
-- リポジトリ：[zning1994/cooking-skill](https://github.com/zning1994/cooking-skill)
+- リポジトリ：[zning1994/brainharness-cooking](https://github.com/zning1994/brainharness-cooking)
 - トリガー例：`今夜何食べよう`、`冷蔵庫に X と Y がある、何が作れる`、`牛肉を柔らかく炒めるコツ`
 
-### docs-organization
+### brainharness-docs
 
 プロジェクトドキュメントをサイズ・対象読者・鮮度で整理するスキル。肥大化した CLAUDE.md / AGENTS.md をスリム化し、各ドキュメントの置き場所を決め、情報の重複を防ぎます。
 
-- リポジトリ：[zning1994/docs-organization](https://github.com/zning1994/docs-organization)
+- リポジトリ：[zning1994/brainharness-docs](https://github.com/zning1994/brainharness-docs)
 - トリガー例：新規プロジェクトのドキュメント骨組み、250 行を超えた CLAUDE.md、散らかったドキュメントの再構成
 
-### brainforge-autoresearch
+### brainharness-autoresearch
 
 スキルのプロンプトを自動で最適化するスキル。Karpathy の autoresearch パターンに基づく：バイナリ eval を定義 → エージェントループで実験 → プロンプトを変異 → 良い変種を残す。
 
-- リポジトリ：[zning1994/brainforge-autoresearch](https://github.com/zning1994/brainforge-autoresearch)（旧 `openclaw-autoresearch`）
+- リポジトリ：[zning1994/brainharness-autoresearch](https://github.com/zning1994/brainharness-autoresearch)（旧 `openclaw-autoresearch`）
 - トリガー例：調子の悪いスキルを体系的にチューニングしたい、複数のプロンプト変種の効果を比較したい
 
 ---
@@ -83,7 +83,7 @@ brainforge は単独のスキルではなく、**マニフェストリポジト�
 ## プロジェクト構造
 
 ```text
-brainforge/
+brainharness/
 ├── .claude-plugin/
 │   └── marketplace.json    # プラグインカタログ（各ソースリポを指す）
 ├── README.md               # 英語（デフォルト）
@@ -93,14 +93,14 @@ brainforge/
 └── LICENSE
 ```
 
-`marketplace.json` の各プラグインは `source.url` で独立したリポジトリを指すため、brainforge は軽量なまま。スキルを更新するときは各自のリポジトリに push するだけで、brainforge を触る必要はありません。brainforge を更新するのはプラグインの追加/削除・カタログメタデータの変更のときだけです。
+`marketplace.json` の各プラグインは `source.url` で独立したリポジトリを指すため、brainharness は軽量なまま。スキルを更新するときは各自のリポジトリに push するだけで、brainharness を触る必要はありません。brainharness を更新するのはプラグインの追加/削除・カタログメタデータの変更のときだけです。
 
 ---
 
 ## 設計思想
 
 - **1 スキル = 1 リポジトリ** — 独立したバージョニング、Issue、リリース
-- **brainforge はカタログにすぎない** — 内容の複製はせず、集約だけ
+- **brainharness はカタログにすぎない** — 内容の複製はせず、集約だけ
 - **OpenClaw / ClawHub との共存** — 同じスキルを両方で公開可能
 - **1 変更 = 1 箇所** — `marketplace.json` の URL 変更がスキル本体に影響しない
 

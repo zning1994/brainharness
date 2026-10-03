@@ -5,6 +5,13 @@ All notable changes to the brainforge marketplace will be documented in this fil
 Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 This file tracks changes to the marketplace itself (manifest, docs, layout) — not to individual plugins. For plugin-level changes, see each plugin's own CHANGELOG.
 
+## [0.2.0] - 2026-10-04
+
+### Changed
+
+- Rename `brainforge` to `brainharness` and align repository links and installation names with BrainHarness.
+- Update distribution metadata and documentation; preserve skill behavior and historical release notes.
+
 ## [0.1.3] - 2026-04-23
 
 ### Added

@@ -1,5 +1,5 @@
 {
-  "name": "brainforge",
+  "name": "brainharness",
   "owner": {
     "name": "zning",
     "email": "zhn038@gmail.com",
@@ -7,33 +7,33 @@
   },
   "metadata": {
     "description": "A forge for Claude Code skills and plugins.",
-    "version": "0.1.3"
+    "version": "0.2.0"
   },
   "plugins": [
     {
-      "name": "cooking-skill",
+      "name": "brainharness-cooking",
       "description": "Help users decide what to cook and how to cook it. Default to Chinese home cooking with practical technique guidance.",
       "source": {
         "source": "url",
-        "url": "https://github.com/zning1994/cooking-skill.git",
+        "url": "https://github.com/zning1994/brainharness-cooking.git",
         "ref": "main"
       }
     },
     {
-      "name": "docs-organization",
+      "name": "brainharness-docs",
       "description": "Organize project documentation by size, audience, and freshness. Slim bloated CLAUDE.md/AGENTS.md and decide where docs should live.",
       "source": {
         "source": "url",
-        "url": "https://github.com/zning1994/docs-organization.git",
+        "url": "https://github.com/zning1994/brainharness-docs.git",
         "ref": "main"
       }
     },
     {
-      "name": "brainforge-autoresearch",
+      "name": "brainharness-autoresearch",
       "description": "Autonomous prompt optimization for AI agent skills. Runs controlled experiments using the Karpathy autoresearch pattern.",
       "source": {
         "source": "url",
-        "url": "https://github.com/zning1994/brainforge-autoresearch.git",
+        "url": "https://github.com/zning1994/brainharness-autoresearch.git",
         "ref": "main"
       }
     }
