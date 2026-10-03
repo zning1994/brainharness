@@ -12,7 +12,7 @@
 Claude Code プラグインマーケットプレイス。
 自分で書いて実際に使っているスキル/プラグインをまとめ、誰でも 1 コマンドでインストールできるようにしています。
 
-[インストール](#インストール) · [同梱プラグイン](#同梱プラグイン) · [貢献](#貢献--フィードバック) · [Changelog](CHANGELOG.md) · [Releases](https://github.com/zning1994/brainharness/releases)
+[インストール](#インストール) · [同梱プラグイン](#同梱プラグイン) · [貢献](#貢献--フィードバック) · [Changelog](CHANGELOG.md) · [Releases](https://github.com/zning1994/brainharness/releases) · [公式サイト](https://brainharness.si/)
 
 **Other Languages / 其他语言：**
 
