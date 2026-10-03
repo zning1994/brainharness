@@ -12,7 +12,7 @@
 A Claude Code plugin marketplace.
 Aggregates skills and plugins I've written and actually use, so others can install them with a single command.
 
-[Install](#install) · [What's Inside](#whats-inside) · [Contribute](#contribute--feedback) · [Changelog](CHANGELOG.md) · [Releases](https://github.com/zning1994/brainharness/releases)
+[Install](#install) · [What's Inside](#whats-inside) · [Contribute](#contribute--feedback) · [Changelog](CHANGELOG.md) · [Releases](https://github.com/zning1994/brainharness/releases) · [Website](https://brainharness.si/)
 
 **Other Languages / 其他语言：**
 
