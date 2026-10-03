@@ -1,3 +1,4 @@
+import { detailLanguages, detailKeys, renderDetail } from './details.mjs';
 import { structuredData, safeJson, sitemap, llmsText } from './seo.mjs';
 import { languages } from './languages.mjs';
 import fs from 'node:fs/promises';
@@ -21,7 +22,7 @@ export function renderPage(lang, catalog, siteUrl) {
   const alternatives = Object.entries(languages).map(([key, info]) => `<link rel="alternate" hreflang="${info.tag}" href="${e(base.href.replace(/\/$/,''))}/${key}/">`).join('') + `<link rel="alternate" hreflang="x-default" href="${e(base.href.replace(/\/$/,''))}/">`;
   const languageMenu = `<details class="language-menu"><summary aria-label="${e(c.languageLabel)}">${languages[lang].label}</summary><div class="language-options">${Object.entries(languages).map(([key, info]) => `<a href="../${key}/" lang="${info.tag}" hreflang="${info.tag}"${key===lang?' aria-current="page"':''}>${info.label}</a>`).join('')}</div></details>`;
   const command = `/plugin marketplace add zning1994/brainharness\n/plugin install ${entries[0].slug}@brainharness`;
-  const cards = entries.map((p,i) => `<article class="skill" id="${p.slug}"><div class="skill-top"><span class="skill-icon" aria-hidden="true">${['◒','▤','⌘'][i]}</span><a href="${e(p.url)}/releases">${e(c.release)}</a></div><h3>${e(c.skills[i].name)}</h3><h4>${e(c.skills[i].category)}</h4><p>${e(c.skills[i].description)}</p><blockquote>${e(c.skills[i].use)}</blockquote><p class="requirement">${e(c.skills[i].requirement)}</p><a class="text-link" href="${e(p.url)}">${e(c.skills[i].action)} <span aria-hidden="true">↗</span></a></article>`).join('');
+  const cards = entries.map((p,i) => `<article class="skill" id="${p.slug}"><div class="skill-top"><span class="skill-icon" aria-hidden="true">${['◒','▤','⌘'][i]}</span><a href="${e(p.url)}/releases">${e(c.release)}</a></div><h3>${e(c.skills[i].name)}</h3><h4>${e(c.skills[i].category)}</h4><p>${e(c.skills[i].description)}</p><blockquote>${e(c.skills[i].use)}</blockquote><p class="requirement">${e(c.skills[i].requirement)}</p><a class="text-link" href="../${detailLanguages.includes(lang)?lang:'en'}/skills/${detailKeys[i]}/">${e(c.skills[i].action)}${detailLanguages.includes(lang)?'':' (English)'} <span aria-hidden="true">↗</span></a></article>`).join('');
   const platformFacts = `<details class="platform-facts"><summary>${e(c.platform)}</summary><dl>${[['Claude Code',c.claudeStatus],['Codex',c.codexStatus],['ChatGPT',c.chatgptStatus],['ClawHub',c.clawhubStatus]].map(([name,status])=>`<dt>${name}</dt><dd>${e(status)}</dd>`).join('')}</dl></details>`;
   const seo = `<meta name="robots" content="index,follow,max-image-preview:large"><meta property="og:site_name" content="BrainHarness"><meta property="og:locale" content="${({en:'en_US',zh:'zh_CN','zh-hant':'zh_TW',ja:'ja_JP',es:'es_ES',de:'de_DE',ko:'ko_KR',pt:'pt_BR',ru:'ru_RU'})[lang]}"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="BrainHarness | ${e(c.title)}"><meta name="twitter:description" content="${e(c.description)}"><script type="application/ld+json">${safeJson(structuredData(lang,c,entries,base.href.replace(/\/$/,'')))}</script>`;
   const data = e(JSON.stringify({lang,copy:c.copy,copied:c.copied,copyFailed:c.copyFailed,demos:c.demos,compatibility,status:{claude:c.claudeStatus,codex:c.codexStatus,chatgpt:c.chatgptStatus,clawhub:c.clawhubStatus}}));
@@ -42,10 +43,14 @@ export async function build() {
   const base = (process.env.SITE_URL || 'https://zning1994.github.io/brainharness').replace(/\/$/,'');
   const out = path.join(here,'dist'); await fs.mkdir(out,{recursive:true});
   for (const lang of Object.keys(locales)) { await fs.mkdir(path.join(out,lang),{recursive:true}); await fs.writeFile(path.join(out,lang,'index.html'),renderPage(lang,catalog,base)); }
+  for (const lang of detailLanguages) for (const [index,key] of detailKeys.entries()) {
+    const dir=path.join(out,lang,'skills',key); await fs.mkdir(dir,{recursive:true});
+    await fs.writeFile(path.join(dir,'index.html'),renderDetail(lang,index,catalogEntries(catalog),locales,base,escapeHtml));
+  }
   for (const file of ['style.css','app.js','favicon.svg','languages.mjs']) await fs.copyFile(path.join(here,file),path.join(out,file));
   await fs.writeFile(path.join(out,'index.html'),renderRoot(base));
   await fs.writeFile(path.join(out,'robots.txt'),`User-agent: *\nAllow: /\nSitemap: ${base}/sitemap.xml\n`);
-  await fs.writeFile(path.join(out,'sitemap.xml'),sitemap(base,escapeHtml));
+  await fs.writeFile(path.join(out,'sitemap.xml'),sitemap(base,escapeHtml,detailKeys.map(key=>[...detailLanguages.map(lang=>[languages[lang].tag,`${base}/${lang}/skills/${key}/`]),['x-default',`${base}/en/skills/${key}/`]])));
   await fs.writeFile(path.join(out,'llms.txt'),llmsText(base,locales,catalogEntries(catalog)));
   console.log(`Built ${Object.keys(locales).length} locales for ${base}`);
 }
