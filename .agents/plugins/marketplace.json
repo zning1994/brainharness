@@ -1,0 +1,47 @@
+{
+  "name": "brainharness",
+  "interface": {
+    "displayName": "BrainHarness"
+  },
+  "plugins": [
+    {
+      "name": "brainharness-cooking",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/zning1994/brainharness-cooking.git",
+        "ref": "openai/v0.2.1"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "brainharness-docs",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/zning1994/brainharness-docs.git",
+        "ref": "openai/v1.2.1"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "brainharness-autoresearch",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/zning1994/brainharness-autoresearch.git",
+        "ref": "openai/v0.3.1"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

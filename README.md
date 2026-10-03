@@ -122,3 +122,13 @@ For ClawHub installations, use `brainharness-cooking`, `brainharness-docs`, and 
 ## License
 
 [MIT](LICENSE)
+
+## Website and OpenAI distribution
+
+The bilingual static website lives in `site/`. Run `npm --prefix site test` and `npm --prefix site run build` with Node.js 24. The build reads plugin identities and repository URLs from `.claude-plugin/marketplace.json`; `site/content.mjs` owns website copy and platform availability. Build output stays untracked.
+
+GitHub Actions builds pull requests and deploys `main` to GitHub Pages. The production URL is https://brainharness.si/; `SITE_URL` in the workflow controls canonical URLs and the sitemap. GitHub Pages owns custom-domain and HTTPS settings.
+
+OpenAI repository distribution uses `.agents/plugins/marketplace.json` and each skill repository’s portable `plugin.json`. The OpenAI catalog pins generated `openai/v<version>` distribution branches; Claude continues to use `main`. Add the marketplace with `codex plugin marketplace add zning1994/brainharness`, then install a plugin with `codex plugin add brainharness-cooking@brainharness`. Public ChatGPT directory listing is separate and has not been submitted.
+
+To prepare a distribution, run `node scripts/package-openai.mjs /path/to/skill-repo /path/to/new-output-directory` with Node.js 24. The output parent must already exist. The script validates matching plugin and skill versions, materializes skill resources, and copies only the portable manifest, skill tree, license and changelog. A generated README points to the packaged skill directory and source documentation. It refuses existing destinations, hidden resources and links outside the source. Run `node --test scripts/package-openai.test.mjs` before packaging. Publish the generated tree to the matching `openai/v<version>` branch only after the source commit is reviewed; do not edit distribution files by hand.

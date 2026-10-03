@@ -1,0 +1,1 @@
+{"name":"brainharness-site","private":true,"type":"module","engines":{"node":">=24"},"scripts":{"build":"node build.mjs","test":"node --test tests/*.test.mjs"}}
