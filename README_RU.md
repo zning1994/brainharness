@@ -12,7 +12,7 @@
 Маркетплейс плагинов для Claude Code.
 Собирает skills и плагины, которые я написал и реально использую, чтобы другие могли установить их одной командой.
 
-[Установка](#установка) · [Что внутри](#что-внутри) · [Вклад](#вклад--обратная-связь) · [Changelog](CHANGELOG.md) · [Releases](https://github.com/zning1994/brainharness/releases)
+[Установка](#установка) · [Что внутри](#что-внутри) · [Вклад](#вклад--обратная-связь) · [Changelog](CHANGELOG.md) · [Releases](https://github.com/zning1994/brainharness/releases) · [Сайт](https://brainharness.si/)
 
 **Other Languages / 其他语言：**
 
