@@ -12,7 +12,7 @@
 brainharness 是一个 Claude Code plugin marketplace。
 聚合一些我自己写的、也确实在用的 skill/plugin，让别人可以一行命令装上用。
 
-[安装](#安装) · [里面有什么](#里面有什么) · [贡献 / 反馈](#贡献--反馈) · [Changelog](CHANGELOG.md) · [Releases](https://github.com/zning1994/brainharness/releases)
+[安装](#安装) · [里面有什么](#里面有什么) · [贡献 / 反馈](#贡献--反馈) · [Changelog](CHANGELOG.md) · [Releases](https://github.com/zning1994/brainharness/releases) · [官网](https://brainharness.si/)
 
 **Other Languages / 其他语言：**
 
