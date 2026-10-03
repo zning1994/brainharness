@@ -18,10 +18,10 @@ test('structured data matches visible localized skills without fabricated rating
   assert.ok(html.includes('id="brainharness-cooking"'));
  }
 });
-test('sitemap includes all nine routes with reciprocal language links',()=>{
+test('sitemap includes all ten routes with reciprocal language links',()=>{
  const xml=sitemap('https://brainharness.si',escapeHtml);
- assert.equal((xml.match(/<loc>/g)||[]).length,9);
- assert.equal((xml.match(/hreflang="x-default"/g)||[]).length,9);
+ assert.equal((xml.match(/<loc>/g)||[]).length,10);
+ assert.equal((xml.match(/hreflang="x-default"/g)||[]).length,10);
  assert.ok(xml.includes('xmlns:xhtml'));
 });
 test('machine-readable guide uses the same limitations and official sources',()=>{

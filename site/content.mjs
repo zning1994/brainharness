@@ -1,3 +1,4 @@
+import { traditionalChinese } from './chinese-traditional.mjs';
 import { translations } from './translations.mjs';
 export const slugs = ['brainharness-cooking', 'brainharness-docs', 'brainharness-autoresearch'];
 export const locales = {
@@ -23,5 +24,5 @@ export const locales = {
     note:'之前安装过 @brainforge？请显式添加新市场，已有安装标识不会自动改名。',sourceTitle:'开源，也欢迎你改进。',sourceText:'读一读技能说明，看看代码，按自己的需要调整。BrainHarness 汇集这些工具，每个技能仍然独立维护。',sourceAction:'浏览市场仓库',footer:'给日常 Agent 的实用工作方式。',skip:'跳到内容',languageLabel:'语言',example:'任务示例',release:'版本记录',platform:'平台',
   }
 };
-Object.assign(locales, translations);
+Object.assign(locales, translations, { 'zh-hant': traditionalChinese });
 export const compatibility = { codex: true };
