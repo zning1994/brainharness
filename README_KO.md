@@ -12,7 +12,7 @@
 Claude Code 플러그인 마켓플레이스.
 제가 직접 만들어 실제로 쓰고 있는 스킬/플러그인을 모아두어, 누구나 명령어 한 줄로 설치할 수 있게 합니다.
 
-[설치](#설치) · [포함 내용](#포함-내용) · [기여](#기여--피드백) · [Changelog](CHANGELOG.md) · [Releases](https://github.com/zning1994/brainharness/releases)
+[설치](#설치) · [포함 내용](#포함-내용) · [기여](#기여--피드백) · [Changelog](CHANGELOG.md) · [Releases](https://github.com/zning1994/brainharness/releases) · [웹사이트](https://brainharness.si/)
 
 **Other Languages / 其他语言：**
 
